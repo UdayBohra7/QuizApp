@@ -5,13 +5,13 @@
     box-sizing: border-box;
 }
 body {
-    /* background-image: url(https://t4.ftcdn.net/jpg/04/39/13/37/360_F_439133763_FrLdhZsd5aGC23r9ATARuKJBr8ifZjIe.jpg); */
-    /* background-size: cover; */
-    background-color: #001e4d;
+    background-image: url(https://t4.ftcdn.net/jpg/04/39/13/37/360_F_439133763_FrLdhZsd5aGC23r9ATARuKJBr8ifZjIe.jpg);
+    background-size: cover;
+    /* background-color: #001e4d; */
 }
 
 .container {
-    background: #fff;
+    background-color: rgba(255, 255, 255, 0.4);
     width: 90%;
     max-width: 600px;
     margin: 100px auto 0;
