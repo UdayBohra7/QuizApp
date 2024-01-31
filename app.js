@@ -43,6 +43,24 @@ const questions = [
             {text: "Stack", correct: true},
             {text: "Tree", correct: false}
         ]
+    },
+    {
+        question: "What is the average time complexity of Quick Sort?",
+        answers: [
+            {text: "O(log(N))", correct: false},
+            {text: "O(N)", correct: false},
+            {text: "O(N^2)", correct: false},
+            {text: "O(N log(N))", correct: true}
+        ]
+    },
+    {
+        question: "The prefix form of A-B/ (C * D ^ E) is?",
+        answers: [
+            {text: "-A/B*C^DE", correct: true},
+            {text: "-A/BC*^DE", correct: false},
+            {text: "-ABCD*^DE", correct: false},
+            {text: " -/*^ACBDE", correct: false}
+        ]
     }
 ];
 
