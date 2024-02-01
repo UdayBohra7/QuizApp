@@ -67,9 +67,11 @@ const questions = [
 const question = document.getElementById("question");
 const ansBtns = document.getElementById("ansContainer");
 const nextBtn = document.getElementById("next-btn");
+const timerDisplay = document.getElementById("timer");
 
 let currentQsIdx = 0;
 let score = 0;
+let timer;
 
 function startQuiz() {
     currentQsIdx = 0;
@@ -79,7 +81,8 @@ function startQuiz() {
 }
 
 function showQuestion() {
-    resetState()
+    resetState();
+    startTimer(10);
     let currentQuestion = questions[currentQsIdx];
     let questionNo = currentQsIdx + 1;
     question.innerHTML = questionNo + ". " + currentQuestion.question;
@@ -98,6 +101,8 @@ function showQuestion() {
 
 
 function resetState() {
+    clearInterval(timer);
+    timerDisplay.innerText = "";
     nextBtn.style.display = "none";
     while(ansBtns.firstChild) {
         ansBtns.removeChild(ansBtns.firstChild);
@@ -146,5 +151,21 @@ nextBtn.addEventListener("click", () => {
         startQuiz();
     }
 })
+
+
+function startTimer(interval) {
+    let timeLeft = interval;
+    timerDisplay.innerText = `Time Left: ${timeLeft}`;
+
+    timer = setInterval(() => {
+        timeLeft--;
+        timerDisplay.innerText = `Time Left: ${timeLeft}`;
+
+        if(timeLeft <= 0){
+            clearInterval(timer);
+            handleNextBtn();
+        }
+    }, 1000);
+}
 
 startQuiz();
