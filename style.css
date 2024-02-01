@@ -11,14 +11,16 @@ body {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.5);
     width: 90%;
     max-width: 600px;
     margin: 100px auto 0;
     border-radius: 10px;
     padding: 30px;
+    box-shadow: 4px 4px 15px black;
 }
 .container h1 {
+    text-align: center;
     font-size: 25px;
     font-weight: 600;
     color: #001e4d;  
@@ -27,6 +29,7 @@ body {
 }
 
 .quiz {
+    display: none;
     padding: 20px 0;
 }
 .quiz h2{
@@ -74,4 +77,16 @@ body {
 }
 .incorrect {
     background: #ff9393;
+}
+
+#startBtn {
+    background: #001e4d;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px 0 auto 195px;
+    border-radius: 4px; 
+    cursor: pointer;
 }

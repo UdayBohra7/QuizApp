@@ -1,3 +1,4 @@
+// implementing Array of objects for questions.
 const questions = [
     {
         question: "What is a data structure?",
@@ -62,7 +63,7 @@ const questions = [
             {text: " -/*^ACBDE", correct: false}
         ]
     }
-];
+];  // All MCQs ends here.
 
 const question = document.getElementById("question");
 const ansBtns = document.getElementById("ansContainer");
@@ -73,6 +74,7 @@ let currentQsIdx = 0;
 let score = 0;
 let timer;
 
+// Main function for starting the Quiz
 function startQuiz() {
     currentQsIdx = 0;
     score = 0;
@@ -80,6 +82,7 @@ function startQuiz() {
     showQuestion();
 }
 
+// Display Questions
 function showQuestion() {
     resetState();
     startTimer(10);
@@ -99,7 +102,7 @@ function showQuestion() {
     })
 }
 
-
+// Reset the overall state to the previous state.
 function resetState() {
     clearInterval(timer);
     timerDisplay.innerText = "";
@@ -109,6 +112,7 @@ function resetState() {
     }
 }
 
+// Checking answers.
 function selectAnswer(e) {
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
@@ -127,7 +131,7 @@ function selectAnswer(e) {
     nextBtn.style.display = "block";
 }
 
-
+// Score Display
 function showScore() {
     resetState();
     question.innerHTML = `You scored ${score} out of ${questions.length}!`;
@@ -135,6 +139,7 @@ function showScore() {
     nextBtn.style.display = "block";
 }
 
+// Question handler
 function handleNextBtn() {
     currentQsIdx++;
     if(currentQsIdx < questions.length){
@@ -144,6 +149,7 @@ function handleNextBtn() {
     }
 }
 
+// Next Button Event
 nextBtn.addEventListener("click", () => {
     if(currentQsIdx < questions.length){
         handleNextBtn();
@@ -152,7 +158,7 @@ nextBtn.addEventListener("click", () => {
     }
 })
 
-
+// Timer for each Questions.
 function startTimer(interval) {
     let timeLeft = interval;
     timerDisplay.innerText = `Time Left: ${timeLeft}`;
@@ -168,4 +174,13 @@ function startTimer(interval) {
     }, 1000);
 }
 
-startQuiz();
+
+// Start Quiz
+const startBtn = document.getElementById("startBtn");
+const quiz = document.querySelector(".quiz");
+
+startBtn.addEventListener("click", () => {
+    quiz.style.display = "block";
+    startBtn.style.display = "none";
+    startQuiz();
+});
