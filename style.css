@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255);
     width: 90%;
     max-width: 600px;
     margin: 100px auto 0;
@@ -89,4 +89,17 @@ body {
     margin: 20px 0 auto 195px;
     border-radius: 4px; 
     cursor: pointer;
+}
+
+.scoreTracker {
+    margin-top: 5px;
+    padding: 5px 0px 0px 10px;
+    color: #001e4d;
+    font-weight: 700;
+    height: 30px;
+    width: 100px;
+    border-radius: 1rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.358),inset
+    -20px -20px 60px rgba(255, 255, 255, 0.358);
 }

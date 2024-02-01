@@ -69,6 +69,7 @@ const question = document.getElementById("question");
 const ansBtns = document.getElementById("ansContainer");
 const nextBtn = document.getElementById("next-btn");
 const timerDisplay = document.getElementById("timer");
+const scoreTracker = document.querySelector(".scoreTracker");
 
 let currentQsIdx = 0;
 let score = 0;
@@ -78,6 +79,7 @@ let timer;
 function startQuiz() {
     currentQsIdx = 0;
     score = 0;
+    scoreTracker.innerText = `Score: ${score}`
     nextBtn.innerHTML = "Next";
     showQuestion();
 }
@@ -119,6 +121,8 @@ function selectAnswer(e) {
     if(isCorrect){
         selectedBtn.classList.add("correct");
         score++;
+        scoreTracker.innerText = `Score: ${score}`;
+
     } else{
         selectedBtn.classList.add("incorrect");
     }
